@@ -1,9 +1,14 @@
 ---
 title: "Control1"
 date: "2023-09-20"
+output: rmarkdown::github_document
 ---
 
 # Ejercicios control 1
+
+```{r}
+library(readxl)
+```
 
 ## Sumatorias
 
@@ -135,6 +140,10 @@ suma
 
 ![Abalon](image-17.png)
 
+```{r}
+Abalon <- read_excel("Abalon.xlsx")
+```
+
 ![1.](image-18.png)
 
 ```{r}
@@ -264,6 +273,10 @@ total <- nrow(Abalon)
 
 ![Banda Ancha](image-28.png)
 
+```{r}
+BandaAncha <- read_excel("BandaAncha.xlsx")
+```
+
 ![1.](image-29.png)
 
 ```{r}
@@ -367,7 +380,7 @@ nrow(subset(claro, Velocidad > wom$Velocidad))
 ![ENS](image-37.png)
 
 ```{r}
-show(ENS)
+ENS <- read_excel('ENS.xlsx')
 ```
 
 ![1.](image-38.png)
@@ -432,6 +445,10 @@ nrow(subset(ENS, HDL < LDL))/nrow(ENS)
 
 ![PCR](image-48.png)
 
+```{r}
+PCR <- read.delim("PCR.txt", header = TRUE)
+```
+
 ![1.](image-49.png)
 
 ```{r}
@@ -469,6 +486,10 @@ nrow(subset(PCR, EDAD == 59 & PCR == 1))
 ```
 
 ![Sismos](image-55.png)
+
+```{r}
+Sismos2021 <- read_excel('Sismos2021.xlsx')
+```
 
 ![1.](image-56.png)
 
