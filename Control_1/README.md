@@ -11,7 +11,7 @@ library(readxl)
 ## Sumatorias
 
 <figure>
-<img src="image-10.png" alt="1." />
+<img src="Imagenes/image-10.png" alt="1." />
 <figcaption aria-hidden="true">1.</figcaption>
 </figure>
 
@@ -22,7 +22,7 @@ sum(c(1:10))
     ## [1] 55
 
 <figure>
-<img src="image-9.png" alt="2." />
+<img src="Imagenes/image-9.png" alt="2." />
 <figcaption aria-hidden="true">2.</figcaption>
 </figure>
 
@@ -48,7 +48,7 @@ sum(v1)
     ## [1] 428927776
 
 <figure>
-<img src="image-8.png" alt="3." />
+<img src="Imagenes/image-8.png" alt="3." />
 <figcaption aria-hidden="true">3.</figcaption>
 </figure>
 
@@ -74,7 +74,7 @@ sum(v1)
     ## [1] 114.9738
 
 <figure>
-<img src="image-7.png" alt="4." />
+<img src="Imagenes/image-7.png" alt="4." />
 <figcaption aria-hidden="true">4.</figcaption>
 </figure>
 
@@ -90,7 +90,7 @@ suma
     ## [1] -2.974148
 
 <figure>
-<img src="image-6.png" alt="5." />
+<img src="Imagenes/image-6.png" alt="5." />
 <figcaption aria-hidden="true">5.</figcaption>
 </figure>
 
@@ -106,7 +106,7 @@ suma
     ## [1] 5.187378
 
 <figure>
-<img src="image-5.png" alt="6." />
+<img src="Imagenes/image-5.png" alt="6." />
 <figcaption aria-hidden="true">6.</figcaption>
 </figure>
 
@@ -123,12 +123,12 @@ suma
 
 ## Probabilidades
 
-![Resumen](image-15.png) DISTR corresponde a la distribucion que se esta
-utilizando. Por ejemplo, alguna de las siguientes:
-![DISTRs](image-16.png)
+![Resumen](Imagenes/image-15.png) DISTR corresponde a la distribucion
+que se esta utilizando. Por ejemplo, alguna de las siguientes:
+![DISTRs](Imagenes/image-16.png)
 
 <figure>
-<img src="image-11.png" alt="1." />
+<img src="Imagenes/image-11.png" alt="1." />
 <figcaption aria-hidden="true">1.</figcaption>
 </figure>
 
@@ -140,7 +140,7 @@ muestra1
     ## [1] 0.8413447
 
 <figure>
-<img src="image-12.png" alt="2." />
+<img src="Imagenes/image-12.png" alt="2." />
 <figcaption aria-hidden="true">2.</figcaption>
 </figure>
 
@@ -152,8 +152,9 @@ muestra2 - muestra1
 
     ## [1] 0.2104763
 
-![3.](image-13.png) Como es discreta al restar la probabilidad hasta el
-8 con la que es hasta el 4 perdemos la info de la probabilidad del 4
+![3.](Imagenes/image-13.png) Como es discreta al restar la probabilidad
+hasta el 8 con la que es hasta el 4 perdemos la info de la probabilidad
+del 4
 
 ``` r
 muestra1 <- ppois(4, 7)
@@ -175,7 +176,7 @@ muestra2 - muestra1
     ## [1] 0.6473259
 
 <figure>
-<img src="image-14.png" alt="4." />
+<img src="Imagenes/image-14.png" alt="4." />
 <figcaption aria-hidden="true">4.</figcaption>
 </figure>
 
@@ -193,16 +194,16 @@ suma
 ## Bases de datos
 
 <figure>
-<img src="image-17.png" alt="Abalon" />
+<img src="Imagenes/image-17.png" alt="Abalon" />
 <figcaption aria-hidden="true">Abalon</figcaption>
 </figure>
 
 ``` r
-Abalon <- read_excel("Abalon.xlsx")
+Abalon <- read_excel("Data/Abalon.xlsx")
 ```
 
 <figure>
-<img src="image-18.png" alt="1." />
+<img src="Imagenes/image-18.png" alt="1." />
 <figcaption aria-hidden="true">1.</figcaption>
 </figure>
 
@@ -223,7 +224,7 @@ nrow(subset(Abalon, centro == "Caldera"))
     ## [1] 100
 
 <figure>
-<img src="image-19.png" alt="2." />
+<img src="Imagenes/image-19.png" alt="2." />
 <figcaption aria-hidden="true">2.</figcaption>
 </figure>
 
@@ -245,7 +246,7 @@ mean(Abalon$largo)
     ## [1] 13.23975
 
 <figure>
-<img src="image-20.png" alt="3." />
+<img src="Imagenes/image-20.png" alt="3." />
 <figcaption aria-hidden="true">3.</figcaption>
 </figure>
 
@@ -256,7 +257,7 @@ sd(Abalon$pesot)
     ## [1] 220.1696
 
 <figure>
-<img src="image-21.png" alt="4." />
+<img src="Imagenes/image-21.png" alt="4." />
 <figcaption aria-hidden="true">4.</figcaption>
 </figure>
 
@@ -287,7 +288,7 @@ mean(Abalon[Abalon$centro == "Coquimbo", ]$pesot)
     ## [1] 385.845
 
 <figure>
-<img src="image-22.png" alt="5." />
+<img src="Imagenes/image-22.png" alt="5." />
 <figcaption aria-hidden="true">5.</figcaption>
 </figure>
 
@@ -310,7 +311,7 @@ mean(Abalon[condicion1, ]$largo)
     ## [1] 14.16065
 
 <figure>
-<img src="image-23.png" alt="6." />
+<img src="Imagenes/image-23.png" alt="6." />
 <figcaption aria-hidden="true">6.</figcaption>
 </figure>
 
@@ -335,7 +336,7 @@ mean(Abalon[condicion1 | condicion2, ]$alto)
     ## [1] 3.4565
 
 <figure>
-<img src="image-24.png" alt="7." />
+<img src="Imagenes/image-24.png" alt="7." />
 <figcaption aria-hidden="true">7.</figcaption>
 </figure>
 
@@ -346,7 +347,7 @@ nrow(Abalon[Abalon$anillos >= 12, ])
     ## [1] 86
 
 <figure>
-<img src="image-25.png" alt="8." />
+<img src="Imagenes/image-25.png" alt="8." />
 <figcaption aria-hidden="true">8.</figcaption>
 </figure>
 
@@ -357,7 +358,7 @@ nrow(Abalon[Abalon$anillos >= 12 & Abalon$centro == "Caldera", ])
     ## [1] 22
 
 <figure>
-<img src="image-26.png" alt="9." />
+<img src="Imagenes/image-26.png" alt="9." />
 <figcaption aria-hidden="true">9.</figcaption>
 </figure>
 
@@ -380,7 +381,7 @@ condicion2 <- Abalon$pesot <= 600
     ## [1] 0.5875
 
 <figure>
-<img src="image-27.png" alt="10." />
+<img src="Imagenes/image-27.png" alt="10." />
 <figcaption aria-hidden="true">10.</figcaption>
 </figure>
 
@@ -392,16 +393,16 @@ total <- nrow(Abalon)
     ## [1] 0.25
 
 <figure>
-<img src="image-28.png" alt="Banda Ancha" />
+<img src="Imagenes/image-28.png" alt="Banda Ancha" />
 <figcaption aria-hidden="true">Banda Ancha</figcaption>
 </figure>
 
 ``` r
-BandaAncha <- read_excel("BandaAncha.xlsx")
+BandaAncha <- read_excel("Data/BandaAncha.xlsx")
 ```
 
 <figure>
-<img src="image-29.png" alt="1." />
+<img src="Imagenes/image-29.png" alt="1." />
 <figcaption aria-hidden="true">1.</figcaption>
 </figure>
 
@@ -412,7 +413,7 @@ mean(BandaAncha$Velocidad)
     ## [1] 11.23052
 
 <figure>
-<img src="image-30.png" alt="2." />
+<img src="Imagenes/image-30.png" alt="2." />
 <figcaption aria-hidden="true">2.</figcaption>
 </figure>
 
@@ -431,7 +432,7 @@ length(unique(BandaAncha$Ciudad))
     ## [1] 50
 
 <figure>
-<img src="image-31.png" alt="3." />
+<img src="Imagenes/image-31.png" alt="3." />
 <figcaption aria-hidden="true">3.</figcaption>
 </figure>
 
@@ -451,7 +452,7 @@ mean(muestra1$Velocidad)
     ## [1] 7.864
 
 <figure>
-<img src="image-32.png" alt="4." />
+<img src="Imagenes/image-32.png" alt="4." />
 <figcaption aria-hidden="true">4.</figcaption>
 </figure>
 
@@ -471,7 +472,7 @@ mean(muestra1)
     ## [1] 10.674
 
 <figure>
-<img src="image-33.png" alt="5." />
+<img src="Imagenes/image-33.png" alt="5." />
 <figcaption aria-hidden="true">5.</figcaption>
 </figure>
 
@@ -490,7 +491,7 @@ sd(subset(BandaAncha, Ciudad == "Osorno")$Velocidad)
     ## [1] 4.444377
 
 <figure>
-<img src="image-34.png" alt="6." />
+<img src="Imagenes/image-34.png" alt="6." />
 <figcaption aria-hidden="true">6.</figcaption>
 </figure>
 
@@ -511,7 +512,7 @@ BandaAncha$Operador[indice]
     ## [1] "M"
 
 <figure>
-<img src="image-35.png" alt="7." />
+<img src="Imagenes/image-35.png" alt="7." />
 <figcaption aria-hidden="true">7.</figcaption>
 </figure>
 
@@ -523,7 +524,7 @@ BandaAncha[BandaAncha$Velocidad == max_velocidad & BandaAncha$Operador == "W", ]
     ## [1] "Chiloe"
 
 <figure>
-<img src="image-36.png" alt="8." />
+<img src="Imagenes/image-36.png" alt="8." />
 <figcaption aria-hidden="true">8.</figcaption>
 </figure>
 
@@ -553,16 +554,16 @@ nrow(subset(claro, Velocidad > wom$Velocidad))
     ## [1] 27
 
 <figure>
-<img src="image-37.png" alt="ENS" />
+<img src="Imagenes/image-37.png" alt="ENS" />
 <figcaption aria-hidden="true">ENS</figcaption>
 </figure>
 
 ``` r
-ENS <- read_excel('ENS.xlsx')
+ENS <- read_excel('Data/ENS.xlsx')
 ```
 
 <figure>
-<img src="image-38.png" alt="1." />
+<img src="Imagenes/image-38.png" alt="1." />
 <figcaption aria-hidden="true">1.</figcaption>
 </figure>
 
@@ -573,7 +574,7 @@ nrow(subset(ENS, ENS$EDAD == 21))
     ## [1] 34
 
 <figure>
-<img src="image-39.png" alt="2." />
+<img src="Imagenes/image-39.png" alt="2." />
 <figcaption aria-hidden="true">2.</figcaption>
 </figure>
 
@@ -584,7 +585,7 @@ mean(ENS$COLES)
     ## [1] 194.7221
 
 <figure>
-<img src="image-40.png" alt="3." />
+<img src="Imagenes/image-40.png" alt="3." />
 <figcaption aria-hidden="true">3.</figcaption>
 </figure>
 
@@ -595,7 +596,7 @@ sd(ENS$PESO)
     ## [1] 14.86869
 
 <figure>
-<img src="image-41.png" alt="4." />
+<img src="Imagenes/image-41.png" alt="4." />
 <figcaption aria-hidden="true">4.</figcaption>
 </figure>
 
@@ -606,7 +607,7 @@ nrow(subset(ENS, ENS$HDL > 40))
     ## [1] 1747
 
 <figure>
-<img src="image-42.png" alt="5." />
+<img src="Imagenes/image-42.png" alt="5." />
 <figcaption aria-hidden="true">5.</figcaption>
 </figure>
 
@@ -617,7 +618,7 @@ nrow(subset(ENS, ENS$TGD >= 120 & ENS$TGD <= 200))
     ## [1] 803
 
 <figure>
-<img src="image-43.png" alt="6." />
+<img src="Imagenes/image-43.png" alt="6." />
 <figcaption aria-hidden="true">6.</figcaption>
 </figure>
 
@@ -628,7 +629,7 @@ nrow(subset(ENS, ENS$PESO < 60))/nrow(ENS)
     ## [1] 0.2111332
 
 <figure>
-<img src="image-44.png" alt="7." />
+<img src="Imagenes/image-44.png" alt="7." />
 <figcaption aria-hidden="true">7.</figcaption>
 </figure>
 
@@ -639,7 +640,7 @@ nrow(subset(ENS, ENS$FUMADOR == 1))/nrow(ENS)
     ## [1] 0.3252485
 
 <figure>
-<img src="image-45.png" alt="8." />
+<img src="Imagenes/image-45.png" alt="8." />
 <figcaption aria-hidden="true">8.</figcaption>
 </figure>
 
@@ -650,7 +651,7 @@ mean(subset(ENS, ENS$SEXO == 1)$GLUBASAL)
     ## [1] 98.23682
 
 <figure>
-<img src="image-46.png" alt="9." />
+<img src="Imagenes/image-46.png" alt="9." />
 <figcaption aria-hidden="true">9.</figcaption>
 </figure>
 
@@ -661,7 +662,7 @@ mean(subset(ENS, REGION == 5)$PESO)
     ## [1] 71.44754
 
 <figure>
-<img src="image-47.png" alt="10." />
+<img src="Imagenes/image-47.png" alt="10." />
 <figcaption aria-hidden="true">10.</figcaption>
 </figure>
 
@@ -672,16 +673,16 @@ nrow(subset(ENS, HDL < LDL))/nrow(ENS)
     ## [1] 0.9821074
 
 <figure>
-<img src="image-48.png" alt="PCR" />
+<img src="Imagenes/image-48.png" alt="PCR" />
 <figcaption aria-hidden="true">PCR</figcaption>
 </figure>
 
 ``` r
-PCR <- read.delim("PCR.txt", header = TRUE)
+PCR <- read.delim("Data/PCR.txt", header = TRUE)
 ```
 
 <figure>
-<img src="image-49.png" alt="1." />
+<img src="Imagenes/image-49.png" alt="1." />
 <figcaption aria-hidden="true">1.</figcaption>
 </figure>
 
@@ -692,7 +693,7 @@ nrow(subset(PCR, EXTRANJERO == 1))/nrow(PCR)
     ## [1] 0.4375
 
 <figure>
-<img src="image-50.png" alt="2." />
+<img src="Imagenes/image-50.png" alt="2." />
 <figcaption aria-hidden="true">2.</figcaption>
 </figure>
 
@@ -703,7 +704,7 @@ max(PCR$EDAD)
     ## [1] 67
 
 <figure>
-<img src="image-51.png" alt="3." />
+<img src="Imagenes/image-51.png" alt="3." />
 <figcaption aria-hidden="true">3.</figcaption>
 </figure>
 
@@ -714,7 +715,7 @@ nrow(subset(PCR, EXTRANJERO == 1 & PCR == 1))/nrow(subset(PCR, EXTRANJERO == 1))
     ## [1] 0.2857143
 
 <figure>
-<img src="image-52.png" alt="4." />
+<img src="Imagenes/image-52.png" alt="4." />
 <figcaption aria-hidden="true">4.</figcaption>
 </figure>
 
@@ -725,7 +726,7 @@ nrow(subset(PCR, EDAD <= 40)) / nrow(PCR)
     ## [1] 0.1785714
 
 <figure>
-<img src="image-53.png" alt="5." />
+<img src="Imagenes/image-53.png" alt="5." />
 <figcaption aria-hidden="true">5.</figcaption>
 </figure>
 
@@ -736,7 +737,7 @@ min(subset(PCR, PCR == 1)$EDAD)
     ## [1] 44
 
 <figure>
-<img src="image-54.png" alt="6." />
+<img src="Imagenes/image-54.png" alt="6." />
 <figcaption aria-hidden="true">6.</figcaption>
 </figure>
 
@@ -747,16 +748,16 @@ nrow(subset(PCR, EDAD == 59 & PCR == 1))
     ## [1] 1
 
 <figure>
-<img src="image-55.png" alt="Sismos" />
+<img src="Imagenes/image-55.png" alt="Sismos" />
 <figcaption aria-hidden="true">Sismos</figcaption>
 </figure>
 
 ``` r
-Sismos2021 <- read_excel('Sismos2021.xlsx')
+Sismos2021 <- read_excel('Data/Sismos2021.xlsx')
 ```
 
 <figure>
-<img src="image-56.png" alt="1." />
+<img src="Imagenes/image-56.png" alt="1." />
 <figcaption aria-hidden="true">1.</figcaption>
 </figure>
 
@@ -767,7 +768,7 @@ nrow(subset(Sismos2021, Tiempo >= 60))
     ## [1] 170
 
 <figure>
-<img src="image-57.png" alt="2." />
+<img src="Imagenes/image-57.png" alt="2." />
 <figcaption aria-hidden="true">2.</figcaption>
 </figure>
 
@@ -778,7 +779,7 @@ nrow(subset(Sismos2021, Latitud <= -30))/nrow(Sismos2021)
     ## [1] 0.3365854
 
 <figure>
-<img src="image-58.png" alt="3." />
+<img src="Imagenes/image-58.png" alt="3." />
 <figcaption aria-hidden="true">3.</figcaption>
 </figure>
 
@@ -789,7 +790,7 @@ nrow(subset(Sismos2021, Magnitud <= 3 & Tiempo >= 60*3))
     ## [1] 17
 
 <figure>
-<img src="image-59.png" alt="4." />
+<img src="Imagenes/image-59.png" alt="4." />
 <figcaption aria-hidden="true">4.</figcaption>
 </figure>
 
@@ -800,7 +801,7 @@ Sismos2021$Magnitud[which.max(Sismos2021$Profundidad)]
     ## [1] 3.6
 
 <figure>
-<img src="image-60.png" alt="5." />
+<img src="Imagenes/image-60.png" alt="5." />
 <figcaption aria-hidden="true">5.</figcaption>
 </figure>
 
@@ -821,7 +822,7 @@ quantile(Sismos2021$Tiempo, .9)
     ## 157.38
 
 <figure>
-<img src="image-61.png" alt="6." />
+<img src="Imagenes/image-61.png" alt="6." />
 <figcaption aria-hidden="true">6.</figcaption>
 </figure>
 
