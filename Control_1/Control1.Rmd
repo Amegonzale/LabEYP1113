@@ -1,0 +1,513 @@
+---
+title: "Control1"
+date: "2023-09-20"
+---
+
+# Ejercicios control 1
+
+## Sumatorias
+
+![1.](image-10.png)
+
+```{r}
+sum(c(1:10))
+```
+
+![2.](image-9.png)
+
+```{r}
+v1 <- c(10:73)
+suma <- 0
+for(i in v1){
+  suma <- suma + i**4
+}
+suma
+```
+
+o
+
+```{r}
+v1 <- c(10:73)
+v1 <- v1**4
+sum(v1)
+```
+
+![3.](image-8.png)
+
+```{r}
+v1 <- c(3:7)
+suma <- 0
+for(i in v1){
+  suma <- suma + 6*sqrt(3*i)
+}
+suma
+```
+
+o
+
+```{r}
+v1 <- c(3:7)
+v1 <- sqrt(v1*3)*6
+sum(v1)
+```
+
+![4.](image-7.png)
+
+```{r}
+v1 <- c(1:21)
+suma <- 0
+for(i in v1){
+  suma <- suma + log(i/10)
+}
+suma
+```
+
+![5.](image-6.png)
+
+```{r}
+v1 <- c(1:100)
+suma <- 0
+for(i in v1){
+  suma <- suma + 1/i
+}
+suma
+```
+
+![6.](image-5.png)
+
+```{r}
+v1 <- c(1:20)
+suma <- 0
+for(i in v1){
+  suma <- suma + sin(pi*i/5)**2
+}
+suma
+```
+
+## Probabilidades
+
+![Resumen](image-15.png) DISTR corresponde a la distribucion que se esta utilizando. Por ejemplo, alguna de las siguientes: ![DISTRs](image-16.png)
+
+![1.](image-11.png)
+
+```{r}
+muestra1 <- pnorm(7, mean=5.6, sd=1.4)
+muestra1
+```
+
+![2.](image-12.png)
+
+```{r}
+muestra1 <- pexp(3, 0.4)
+muestra2 <- pexp(6, 0.4)
+muestra2 - muestra1
+```
+
+![3.](image-13.png) Como es discreta al restar la probabilidad hasta el 8 con la que es hasta el 4 perdemos la info de la probabilidad del 4
+
+```{r}
+muestra1 <- ppois(4, 7)
+muestra2 <- ppois(8, 7)
+dato1 <- dpois(4, 7)
+muestra2 - muestra1 + dato1
+```
+
+o
+
+```{r}
+muestra1 <- ppois(3, 7)
+muestra2 <- ppois(8, 7)
+muestra2 - muestra1 
+```
+
+![4.](image-14.png)
+
+```{r}
+primos <- c(2,3,5,7,11,13,17,19)
+suma <- 0
+for(i in primos){
+    suma <- suma + dbinom(i, 20, 0.3)     
+}
+suma
+```
+
+## Bases de datos
+
+![Abalon](image-17.png)
+
+![1.](image-18.png)
+
+```{r}
+Caldera <- Abalon$centro == "Caldera"
+cantidad <- sum(Caldera)
+cantidad
+```
+
+o
+
+```{r}
+nrow(subset(Abalon, centro == "Caldera"))
+```
+
+![2.](image-19.png)
+
+```{r}
+suma_largos <- sum(Abalon$largo)
+cantidad <- nrow(Abalon)
+promedio <- suma_largos/cantidad
+promedio
+```
+
+o
+
+```{r}
+mean(Abalon$largo)
+```
+
+![3.](image-20.png)
+
+```{r}
+sd(Abalon$pesot)
+```
+
+![4.](image-21.png)
+
+```{r}
+condicion1 <- Abalon$centro == "Coquimbo"
+suma <- sum(Abalon$pesot[condicion1])
+cantidad <- nrow(Abalon[condicion1, ])
+suma/cantidad
+
+```
+
+o
+
+```{r}
+condicion1 <- Abalon$centro == "Coquimbo"
+mean(Abalon[condicion1, ]$pesot)
+```
+
+o
+
+```{r}
+mean(Abalon[Abalon$centro == "Coquimbo", ]$pesot)
+```
+
+![5.](image-22.png)
+
+```{r}
+condicion1 <- Abalon$largo > 10
+suma <- sum(Abalon$largo[condicion1])
+cantidad <- nrow(Abalon[condicion1, ])
+suma/cantidad
+```
+
+o
+
+```{r}
+condicion1 <- Abalon$largo > 10
+mean(Abalon[condicion1, ]$largo)
+```
+
+![6.](image-23.png)
+
+```{r}
+condicion1 <- Abalon$centro == "Chiloé"
+condicion2 <- Abalon$centro == "Puerto Montt"
+suma <- sum(Abalon$alto[condicion1 | condicion2])
+cantidad <- nrow(Abalon[condicion1 | condicion2, ])
+suma/cantidad
+```
+
+o
+
+```{r}
+condicion1 <- Abalon$centro == "Chiloé"
+condicion2 <- Abalon$centro == "Puerto Montt"
+mean(Abalon[condicion1 | condicion2, ]$alto)
+```
+
+![7.](image-24.png)
+
+```{r}
+nrow(Abalon[Abalon$anillos >= 12, ])
+```
+
+![8.](image-25.png)
+
+```{r}
+nrow(Abalon[Abalon$anillos >= 12 & Abalon$centro == "Caldera", ])
+```
+
+![9.](image-26.png)
+
+```{r}
+total <- nrow(Abalon)
+(nrow(Abalon[Abalon$pesot >= 200 & Abalon$pesot <= 600, ]))/total
+```
+
+o
+
+```{r}
+total <- nrow(Abalon)
+condicion1 <- Abalon$pesot >= 200
+condicion2 <- Abalon$pesot <= 600
+(nrow(Abalon[condicion1 & condicion2, ]))/total
+```
+
+![10.](image-27.png)
+
+```{r}
+total <- nrow(Abalon)
+(nrow(Abalon[Abalon$centro == "Chiloé", ]))/total
+```
+
+![Banda Ancha](image-28.png)
+
+![1.](image-29.png)
+
+```{r}
+mean(BandaAncha$Velocidad)
+```
+
+![2.](image-30.png)
+
+```{r}
+nrow(table(BandaAncha$Ciudad))
+```
+
+o
+
+```{r}
+length(unique(BandaAncha$Ciudad))
+```
+
+![3.](image-31.png)
+
+```{r}
+mean(BandaAncha[BandaAncha$Operador == "C" & BandaAncha$Ciudad == "Iquique", ]$Velocidad)
+```
+
+o
+
+```{r}
+muestra1 <- subset(BandaAncha, BandaAncha$Operador == "C" & BandaAncha$Ciudad == "Iquique")
+mean(muestra1$Velocidad)
+```
+
+![4.](image-32.png)
+
+```{r}
+mean(BandaAncha[BandaAncha$Ciudad == "Illapel", ]$Velocidad)
+```
+
+o
+
+```{r}
+muestra1 <- subset(BandaAncha, BandaAncha$Ciudad == "Illapel")$Velocidad
+mean(muestra1)
+```
+
+![5.](image-33.png)
+
+```{r}
+sd(BandaAncha[BandaAncha$Ciudad == "Osorno", ]$Velocidad)
+```
+
+o
+
+```{r}
+sd(subset(BandaAncha, Ciudad == "Osorno")$Velocidad)
+```
+
+![6.](image-34.png)
+
+```{r}
+max_velocidad <- max(BandaAncha[BandaAncha$Ciudad == "Arauco", ]$Velocidad)
+BandaAncha[BandaAncha$Velocidad == max_velocidad & BandaAncha$Ciudad == "Arauco", ]$Operador
+```
+
+o
+
+```{r}
+indice <- which.max( subset(BandaAncha, Ciudad == "Arauco")$Velocidad)
+BandaAncha$Operador[indice]
+```
+
+![7.](image-35.png)
+
+```{r}
+max_velocidad <- max(BandaAncha[BandaAncha$Operador == "W",]$Velocidad)
+BandaAncha[BandaAncha$Velocidad == max_velocidad & BandaAncha$Operador == "W", ]$Ciudad
+```
+
+![8.](image-36.png)
+
+```{r}
+cantidad <- 0
+
+for (i in 1:nrow(BandaAncha)){
+  for (j in 1:nrow(BandaAncha)){
+    if (BandaAncha$Ciudad[i] == BandaAncha$Ciudad[j] & BandaAncha$Operador[i] == "C" & BandaAncha$Operador[j] == "W" & BandaAncha$Velocidad[i] > BandaAncha$Velocidad[j]){
+      cantidad <- cantidad + 1
+    }
+  }
+}
+cantidad
+```
+
+o
+
+```{r}
+claro <- subset(BandaAncha, Operador == "C")
+wom <- subset(BandaAncha, Operador == "W")
+nrow(subset(claro, Velocidad > wom$Velocidad))
+```
+
+![ENS](image-37.png)
+
+```{r}
+show(ENS)
+```
+
+![1.](image-38.png)
+
+```{r}
+nrow(subset(ENS, ENS$EDAD == 21))
+```
+
+![2.](image-39.png)
+
+```{r}
+mean(ENS$COLES)
+```
+
+![3.](image-40.png)
+
+```{r}
+sd(ENS$PESO)
+```
+
+![4.](image-41.png)
+
+```{r}
+nrow(subset(ENS, ENS$HDL > 40))
+```
+
+![5.](image-42.png)
+
+```{r}
+nrow(subset(ENS, ENS$TGD >= 120 & ENS$TGD <= 200))
+```
+
+![6.](image-43.png)
+
+```{r}
+nrow(subset(ENS, ENS$PESO < 60))/nrow(ENS)
+```
+
+![7.](image-44.png)
+
+```{r}
+nrow(subset(ENS, ENS$FUMADOR == 1))/nrow(ENS)
+```
+
+![8.](image-45.png)
+
+```{r}
+mean(subset(ENS, ENS$SEXO == 1)$GLUBASAL)
+```
+
+![9.](image-46.png)
+
+```{r}
+mean(subset(ENS, REGION == 5)$PESO)
+```
+
+![10.](image-47.png)
+
+```{r}
+nrow(subset(ENS, HDL < LDL))/nrow(ENS)
+```
+
+![PCR](image-48.png)
+
+![1.](image-49.png)
+
+```{r}
+nrow(subset(PCR, EXTRANJERO == 1))/nrow(PCR)
+```
+
+![2.](image-50.png)
+
+```{r}
+max(PCR$EDAD)
+```
+
+![3.](image-51.png)
+
+```{r}
+nrow(subset(PCR, EXTRANJERO == 1 & PCR == 1))/nrow(subset(PCR, EXTRANJERO == 1))
+```
+
+![4.](image-52.png)
+
+```{r}
+nrow(subset(PCR, EDAD <= 40)) / nrow(PCR)
+```
+
+![5.](image-53.png)
+
+```{r}
+min(subset(PCR, PCR == 1)$EDAD)
+```
+
+![6.](image-54.png)
+
+```{r}
+nrow(subset(PCR, EDAD == 59 & PCR == 1))
+```
+
+![Sismos](image-55.png)
+
+![1.](image-56.png)
+
+```{r}
+nrow(subset(Sismos2021, Tiempo >= 60))
+```
+
+![2.](image-57.png)
+
+```{r}
+nrow(subset(Sismos2021, Latitud <= -30))/nrow(Sismos2021)
+```
+
+![3.](image-58.png)
+
+```{r}
+nrow(subset(Sismos2021, Magnitud <= 3 & Tiempo >= 60*3))
+```
+
+![4.](image-59.png)
+
+```{r}
+Sismos2021$Magnitud[which.max(Sismos2021$Profundidad)]
+```
+
+![5.](image-60.png)
+
+```{r}
+quantile(Sismos2021$Tiempo, probs = c(.9))
+```
+
+o
+
+```{r}
+quantile(Sismos2021$Tiempo, .9)
+```
+
+![6.](image-61.png)
+
+```{r}
+quantile(subset(Sismos2021, Magnitud >= 4)$Profundidad, 0.8)
+```
