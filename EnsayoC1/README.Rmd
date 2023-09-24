@@ -1,0 +1,53 @@
+---
+title: "Ensayo C1"
+output: rmarkdown::github_document
+date: "2023-09-24"
+---
+
+# Ensayo control 1
+
+```{r}
+library(readxl)
+```
+
+```{r}
+BandaAncha <- read_excel("Data/BandaAncha.xlsx")
+```
+
+### Pregunta 4
+
+```{r}
+2+2
+2*sqrt(2)
+10**2+10**3+10**0+10**1
+```
+
+### Pregunta 5
+![](Img/1.png)
+```{r}
+v <- c(1:10)
+v <- 2**(1/v)
+sum(v)
+```
+
+## Bases de datos
+![](Img/5.png)
+### Pregunta 7
+![](Img/2.png)
+```{r}
+mean(BandaAncha$Velocidad)
+```
+
+### Pregunta 8
+![](Img/3.png)
+```{r}
+mean(subset(BandaAncha, Ciudad == "Illapel")$Velocidad)
+```
+
+### Pregunta 9
+![](Img/4.png)
+```{r}
+claro <- subset(BandaAncha, Operador == "C")
+wom <- subset(BandaAncha, Operador == "W")
+nrow(subset(claro, Velocidad > wom$Velocidad))
+```
