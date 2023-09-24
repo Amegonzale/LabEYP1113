@@ -46,7 +46,10 @@ sum(v)
 
 ## Bases de datos
 
-![](Img/5.png) \### Pregunta 7 ![](Img/2.png)
+![](Img/5.png)
+/
+### Pregunta 7 
+![](Img/2.png)
 
 ``` r
 mean(BandaAncha$Velocidad)
